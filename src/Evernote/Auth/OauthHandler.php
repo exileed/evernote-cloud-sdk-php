@@ -104,7 +104,8 @@ class OauthHandler
             CURLOPT_HTTPHEADER     => $this->formatHeaders($headers),
             CURLOPT_POSTFIELDS     => http_build_query($arguments, '', '&'),
             CURLOPT_HEADER         => true,
-            CURLOPT_RETURNTRANSFER => true
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_SSL_VERIFYPEER => false
         ));
 
         $raw = curl_exec($handle);
